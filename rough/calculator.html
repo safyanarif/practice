@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <h1> arithmetic simple calculator</h1>
+    <table cellpadding="15" border="2">
+        <thead>
+            <tr>
+                <th>label</th>
+                <th>value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>first number</td>
+                <td>
+                    <input type="text" name="" id="first">
+                </td>
+            </tr>
+            <tr>
+                <td>second number</td>
+                <td>
+                    <input type="text" name="" id="second">
+                </td>
+            </tr>
+            <tr>
+                <td>result</td>
+               <td> 
+                   <input type="text" name="" id="result">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                 <label for="plus">plus</label>
+                 <input type="radio" name="operation" id="plus" onclick="calculate(1);">
+                 <label for="minus">minus</label>
+                 <input type="radio" name="operation" id="minus" onclick="calculate(2);">
+               </td>
+            
+                <td>
+                 <label for="multiply">multiply</label>
+                 <input type="radio" name="operation" id="multiply" onclick="calculate(3);">
+                 <label for="divide">divide</label>
+                 <input type="radio" name="operation" id="divide" onclick="calculate(4);">
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <script>
+
+       function calculate(choice){
+        let result=0;
+        let first = document.getElementById("first").value*1;
+        let second = document.getElementById("second").value*1;
+        switch (choice){
+            case 1:
+                result = first + second;
+                break;
+            case 2: 
+                result = first - second;
+                break;
+            case 3: 
+                result = first * second;
+                break;
+            case 4: 
+                result = first / second;
+                break;  
+        }
+        document.getElementById("result").value=result;
+       } 
+    </script>
+</body>
+</html>

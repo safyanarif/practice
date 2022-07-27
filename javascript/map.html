@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my map</title>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvBe6t5-InpTLgcbqLxwkDW2xABF3gcPc&amp;sensor=false"></script>
+
+    <style>
+       #my_map { 
+        height: 400px;
+        width:  900px;
+        border: 1px solid red;
+       }
+    </style>
+</head>
+<body>
+    <div id="my_map">
+
+    </div>
+
+    <script>
+        function initMap() {
+            let myLatLng = {Lat: 34.0095327, Lng: 71.4805659};
+            let options= {zoom: 18, center: myLatLng};
+            let divObj= document.getElementById('my_map');
+            let mapp= new google.maps.Map(divObj, options);
+
+            let marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: mapp,
+                    title: 'Peshawar University!'
+                });
+        }
+        initMap();
+    </script>
+</body>
+</html>
